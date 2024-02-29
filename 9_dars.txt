@@ -1,0 +1,29 @@
+SELECT * FROM brands ORDER BY brand_name DESC;
+
+SELECT * FROM models WHERE car_count > 2 ORDER BY car_count;
+
+SELECT * FROM models WHERE car_count < 5 ORDER BY car_count DESC;
+
+SELECT * FROM models WHERE car_count > 4 and car_count < 15 ORDER BY car_count DESC;
+
+SELECT brand_name, count(model_id) FROM models JOIN brands
+USING(brand_id)
+GROUP BY brand_name;
+
+SELECT color_name, count(model_id) AS count_models FROM models JOIN colors
+USING(color_id)
+GROUP BY color_name;
+
+SELECT model_name ||' '|| model_price FROM models;
+
+SELECT * FROM customers;
+
+SELECT * FROM customers WHERE country IN ('Uzbekiston', 'Amerika', 'Italia');
+
+SELECT * FROM employees;
+
+SELECT first_name ||' '|| last_name AS full_name FROM employees WHERE city = 'Fegana';
+
+SELECT * FROM customers WHERE last_name LIKE '%v';
+
+SELECT * FROM customers WHERE email LIKE '%gmai%';
